@@ -28,7 +28,7 @@ const textureLoader = new THREE.TextureLoader();
 const diffuseTexture = textureLoader.load('./assets/img/lava.jpg'); 
 const torus2 = new THREE.Mesh(
     geometry,
-    new THREE.MeshStandardMaterial({ map: diffuseTexture })
+    new THREE.MeshStandardMaterial({ bumpMap: diffuseTexture })
 );
 torus2.position.x = 0;
 scene.add(torus2);
@@ -38,7 +38,7 @@ const diffuse2 = textureLoader.load('./assets/img/awa.jpg');
 const normalMap = textureLoader.load('./assets/img/lava.jpg'); // usamos lava como normal map
 const torus3 = new THREE.Mesh(
     geometry,
-    new THREE.MeshStandardMaterial({ map: diffuse2, normalMap: normalMap })
+    new THREE.MeshStandardMaterial({ diffuseMap: diffuse2, normalMap: normalMap })
 );
 torus3.position.x = 3;
 scene.add(torus3);
@@ -76,3 +76,4 @@ function animate() {
     renderer.render(scene, camera);
 }
 renderer.setAnimationLoop(animate);
+
